@@ -28,6 +28,7 @@ def register():
         bio=data.get('bio', ''),
         date_of_birth=data.get('date_of_birth'),
         
+        
     )
     user.save()
     

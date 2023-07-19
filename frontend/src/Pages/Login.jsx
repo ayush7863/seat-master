@@ -42,6 +42,7 @@ const Login = () => {
         console.log(response.data);
         setShowSuccessAlert(true);
         setShowErrorAlert(false);
+        localStorage.setItem("user",JSON.stringify(formData))
         setFormData({
           username: "",
           password: "",
