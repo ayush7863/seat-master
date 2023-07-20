@@ -20,11 +20,12 @@ const Navbar = () => {
   return (
     <Flex align="center" justify="space-between" px={4} py={2} bg="gray.800" color="white">
       <Box>
-        <Text fontSize="xl" fontWeight="bold">SeatMaster</Text>
+        <Text fontSize="xl" fontWeight="bold"><Link to="/">SeatMaster</Link></Text>
       </Box>
       <Box>
         <Flex align="center">
-          <Link to="/" style={{ marginRight: '1rem' }}>Home</Link>
+          <Link to="/movies" style={{ marginRight: '1rem' }}>Movies</Link>
+           <Link to="/" style={{ marginRight: '1rem' }}>Events</Link>
           <Link to="/login" style={{ marginRight: '1rem' }}>Login</Link>
           <Link to="/register" style={{ marginRight: '1rem' }}>Signup</Link>
           <Button variant="link" onClick={handleProfileClick} style={{ marginRight: '1rem' }}>Profile</Button>

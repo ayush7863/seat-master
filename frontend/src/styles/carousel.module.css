@@ -1,0 +1,17 @@
+.carousel_buttons {
+  position: relative;
+  top: -240px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Vertically center the buttons */
+  margin-top: 10px;
+}
+
+.carousel_buttons button {
+  background: transparent;
+  border: none;
+  font-size: 34px;
+  color: #007bff;
+  margin: 0 10px;
+  cursor: pointer;
+}
