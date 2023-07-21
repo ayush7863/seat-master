@@ -13,10 +13,11 @@ import {
 import axios from "axios"; // Import axios for making HTTP requests
 import { useNavigate } from "react-router-dom";
 
-const Login = () => {
+const AdminLogin = () => {
   const [formData, setFormData] = useState({
     username: "",
     password: "",
+    token: "",
   });
 
   const [showSuccessAlert, setShowSuccessAlert] = useState(false);
@@ -42,12 +43,12 @@ const Login = () => {
         console.log(response.data);
         setShowSuccessAlert(true);
         setShowErrorAlert(false);
-        localStorage.setItem("user",JSON.stringify(formData))
+        localStorage.setItem("user", JSON.stringify(formData));
         setFormData({
           username: "",
           password: "",
         });
-        // navigate("/"); // Redirect to the home page
+        navigate("/"); // Redirect to the home page
       })
       .catch((error) => {
         // Handle the error, e.g., show error message or display form validation errors
@@ -58,7 +59,16 @@ const Login = () => {
   };
 
   return (
-    <Box maxWidth="500px" mx="auto" mt={8} p={4} border="1px" borderColor="gray.200" borderRadius="md" boxShadow="md">
+    <Box
+      maxWidth="500px"
+      mx="auto"
+      mt={8}
+      p={4}
+      border="1px"
+      borderColor="gray.200"
+      borderRadius="md"
+      boxShadow="md"
+    >
       <Heading mb={4}>Login Page</Heading>
       <form onSubmit={handleSubmit}>
         <FormControl mb={4}>
@@ -78,6 +88,16 @@ const Login = () => {
             type="password"
             name="password"
             value={formData.password}
+            onChange={handleInputChange}
+            required
+          />
+        </FormControl>
+        <FormControl mb={4}>
+          <FormLabel>AdminToken</FormLabel>
+          <Input
+            type="text"
+            name="token"
+            value={formData.token}
             onChange={handleInputChange}
             required
           />
@@ -105,4 +125,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default AdminLogin;
